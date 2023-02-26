@@ -31,7 +31,7 @@
                     <a class="" href="index.php"><i class="mdi mdi-gauge"></i><span>Dashboard </span></a>
                 </li>
                 <li>
-                    <a class="" href="#"><i class="mdi mdi-gauge"></i><span>Dashboard </span></a>
+                    <a class="" href="banner.php"><i class="mdi mdi-gauge"></i><span>Banner </span></a>
                 </li>
                 <!-- <li>
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>

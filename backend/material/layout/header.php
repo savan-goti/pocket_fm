@@ -1,4 +1,5 @@
-<?php session_start(); 
+<?php 
+session_start(); 
 include('config.php'); 
 
 if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
@@ -27,6 +28,7 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
     <link href="../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
     <link href="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <link href="../assets/plugins/css-chart/css-chart.css" rel="stylesheet">
+    <link href="../assets/plugins/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!--This page css - Morris CSS -->
     <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
     <!-- Vector CSS -->

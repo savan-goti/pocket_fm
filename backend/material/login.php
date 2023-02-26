@@ -153,10 +153,10 @@
                             </div>
                         </div>
                         <div class="form-group text-center m-t-20">
-                            <div class="col-xs-12">
+                            <!-- <div class="col-xs-12">
                                 <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light"
                                     type="submit">Reset</button>
-                            </div>
+                            </div> -->
                         </div>
                     </form>
                 </div>
