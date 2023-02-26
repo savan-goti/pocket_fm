@@ -1,3 +1,18 @@
+<?php 
+
+$msg ="";
+$msgErr ="";
+if (isset($_REQUEST['delete'])) {
+    $delete = $_REQUEST['delete'];
+    $unlinkImage = $_REQUEST['image'];
+    $table='tblbanner';
+    $where = "id=".$delete;
+    include 'delete_data.php';
+    // print_r($msg);die;
+}
+
+?>
+
 <?php include('layout/header.php');?>
 <div class="row page-titles">
     <div class="col-md-5 col-8 align-self-center">
@@ -15,12 +30,21 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">
+                <h4 class="card-title mb-4">
                     Benner
                     <a href="banner_add.php" class="btn btn-info btn-rounded float-right"><i class="fas fa-plus"></i> Add</a>
                     <!-- <button type="button" class="btn btn-info btn-rounded float-right" data-toggle="modal"
                         data-target="#add-contact"><i class="fas fa-plus"></i> Add</button> -->
                 </h4>
+                <?php if(!empty($msg)){ ?>
+                    <div class="alert alert-success"> <?= $msg; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                    </div>
+                <?php } else if(!empty($msgErr)){ ?>
+                    <div class="alert alert-danger"> <?= $msgErr; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                    </div>
+                <?php } ?>
 
                 <div class="table-responsive">
                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
@@ -50,8 +74,11 @@
                                 <td><?= $row['url'] ?></td>
                                 <td><?= $row['type'] ?></td>
                                 <td>
-                                    <a href="banner_add.php?id=<?= $row['id'] ?>" class="btn btn-primary">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <form method="post">
+                                        <a href="banner_add.php?id=<?= $row['id'] ?>" class="btn btn-primary">Edit</a>
+                                        <input type="hidden" name="image" value="../banner_image/<?php echo ($row['image'])?$row['image']:'Placeholder.jpg'; ?>">
+                                        <button type="submit" name="delete" value="<?= $row['id'] ?>" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             <?php } } ?>
@@ -61,58 +88,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- Add Contact Popup Model -->
-<div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add New Contact</h4>
-            </div>
-            <div class="modal-body">
-                <from class="form-horizontal form-material">
-                    <div class="form-group">
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Type name">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Phone">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Designation">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Age">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Date of joining">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Salary">
-                        </div>
-                        <div class="col-md-12 m-b-20">
-                            <div class="fileupload btn btn-danger btn-rounded waves-effect waves-light"><span><i
-                                        class="ion-upload m-r-5"></i>Upload Contact Image</span>
-                                <input type="file" class="upload">
-                            </div>
-                        </div>
-                    </div>
-                </from>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button>
-                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
 </div>
 
 <?php include('layout/footer.php');?>

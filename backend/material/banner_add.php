@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
         $errors = array();
     
         unlink("image/banner/" . $_POST['old_image']);
-        $file_name = $_POST['id'] . $image['name'];
+        $file_name = rand(11111,999999) .$_POST['id'] . $image['name'];
         $file_type = $image['type'];
         $tmp_name = $image['tmp_name'];
         $file_size = $image['size'];
