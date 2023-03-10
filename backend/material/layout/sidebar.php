@@ -33,6 +33,9 @@
                 <li>
                     <a class="" href="banner.php"><i class="mdi mdi-gauge"></i><span>Banner </span></a>
                 </li>
+                <li>
+                    <a class="" href="category.php"><i class="mdi mdi-gauge"></i><span>Category </span></a>
+                </li>
                 <!-- <li>
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
                             <ul aria-expanded="false" class="collapse">
