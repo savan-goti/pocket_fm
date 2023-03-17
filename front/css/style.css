@@ -1,0 +1,161 @@
+ body{
+    background-color: #13253b;
+ }
+
+ a {
+    text-decoration: none !important;
+ }
+ .bg_color{
+    /* background-color: #1a9de1; */
+    /* background: linear-gradient(135deg, red, blue); */
+    background: repeating-linear-gradient(45deg, blue, red);
+ }
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.player {
+    position: relative;
+    width: 350px;
+    background: #f1f3f4;
+    box-shadow: 0 50px 80px rgba(0, 0, 0, 0.25);
+}
+
+.player .imgbx {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.player .imgbx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player audio {
+    width: 100%;
+    outline: none;
+}
+.swagBackground {
+    background: #e51a4d;
+    -webkit-clip-path: ellipse(100% 50% at 50% 0);
+    clip-path: ellipse(100% 50% at 50% 0);
+    height: 450px;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    -webkit-transition: background-color .5s ease;
+    -moz-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+
+
+
+
+
+
+
+.owl-stage { 
+    padding: 8px 0;
+}
+.epiCard {
+    border-radius: 10px;
+    padding: 5px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+    /* padding: 8px 0; */
+}
+.epiCard:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
+.pointer {
+    cursor: pointer;
+}
+
+.episodeImage {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.truncate {
+    white-space: nowrap;
+    font-weight: 700;
+    padding: 3px 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+
+.Card_Username, .truncate {
+    max-width: 177px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:15px;
+}
+
+.Card_Username {
+    color: #ffffff;
+    font-weight: 500;
+    font-size:12px;
+}
+.homeepi_image{
+    border-radius: 15px;
+}
+.homeepisodeitomclass{
+    width:220px;
+    /* margin-right: 10px; */
+}
+
+.title_box_padding{
+    padding-left:15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right:6px ;
+    background-color: #000000;
+}
+
+.card_bg{
+    background-color: #000000;
+}
+.play_button_bg{
+    background-color: #000000;
+}
+
+
+.play_button_bg:hover{
+    background: repeating-linear-gradient(45deg, blue, red);
+}
+
+
+.play_icone i{
+    color: #ffffff;
+}
+
+.card_table_text th{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 15px;
+    /* font-weight: 300; */
+}
+
+.card_table_text td{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 15px;
+    /* font-weight: 300; */
+}
+
