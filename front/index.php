@@ -1,19 +1,23 @@
-<?php include('layout/header.php'); ?>
-      <!-- <main class="container">
-        <div class="card bg-dark text-white border-0">
-            <img src="image/banner.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text">Last updated 3 mins ago</p>
-            </div>
-          </div>
+<?php 
+include('layout/header.php'); 
+// if(!isset($_SESSION['userData'])){
+//     header("location: index.php");
+// }
+?>
+<!-- <main class="container">
+    <div class="card bg-dark text-white border-0">
+        <img src="image/banner.png" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+    </div>
+</main> -->
 
-
-        </main> -->
-
-    <!-- ====== Start Episodes =========== -->
-    <section id="HomeBanner" class="slider" style="margin: 40px 0px;">
+<!-- ====== Start Episodes =========== -->
+<!-- <section id="HomeBanner" class="slider" style="margin: 40px 0px;">
         <div class="container">
             <div class="mb-3 text-light">
                 <h3>Trending This Week</h3>
@@ -60,9 +64,49 @@
                 </a>
             </div>
         </div>
-    </section>
- 
-    <section id="HomeBanner" class="slider" style="margin: 40px 0px;">
+    </section> -->
+
+<!-- ====== Start Episodes =========== -->
+
+<?php 
+    $sql = "SELECT * FROM tblstory_type";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while($category_row = mysqli_fetch_assoc($result)) { 
+            $sql2 = "SELECT * FROM tblstorys WHERE story_type_id=".$category_row['id']." ";
+            $result2 = mysqli_query($conn, $sql2);
+            if (mysqli_num_rows($result2) > 0) {
+            ?>
+
+<section id="HomeBanner" class="slider" style="margin: 40px 0px;">
+    <div class="container">
+        <div class="mb-3 text-light">
+            <h3><?= !empty($category_row['name'])?$category_row['name']:''; ?></h3>
+        </div>
+
+        <div class="owl-carousel owl-theme">
+            <?php  while($story_row = mysqli_fetch_assoc($result2)) { ?>
+            <a href="show.php?story=<?= $story_row['id']; ?>">
+                <div class="item homeepisodeitomclass d-flex justify-content-center">
+                    <div class="pointer epiCard">
+                        <div class="episodeImage">
+                            <img src="../story_image/<?= $story_row['image']; ?>" alt="Thumbnail" class="homeepi_image">
+                        </div>
+                        <div class=" mt-2 rounded title_box_padding">
+                            <div class="truncate"><?= $story_row['name'];?></div>
+                            <div class="Card_Username">Sunny Kumar Sinha</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <?php }  ?>
+
+        </div>
+    </div>
+</section>
+<?php } } } ?>
+
+<!-- <section id="HomeBanner" class="slider" style="margin: 40px 0px;">
         <div class="container">
             <div class="mb-3 text-light">
                 <h3>Ambitious Girl</h3>
@@ -193,8 +237,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
-    <?php include('layout/footer.php'); ?>
-
+<?php include('layout/footer.php'); ?>

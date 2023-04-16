@@ -32,23 +32,20 @@
                     </div>
 
                     <div class="owl-carousel owl-theme">
-                    <?php 
-                        
-                        
-                            while($story_row = mysqli_fetch_assoc($result2)) { ?>
-                                    <a href="show.php">
-                                        <div class="item homeepisodeitomclass d-flex justify-content-center">
-                                            <div class="pointer epiCard">
-                                                <div class="episodeImage">
-                                                    <img  src="../story_image/<?= $story_row['image']; ?>"  alt="Thumbnail" class="homeepi_image">
-                                                </div>
-                                                <div class=" mt-2 rounded title_box_padding">
-                                                    <div class="truncate"><?= $story_row['name'];?></div>
-                                                    <div class="Card_Username">Sunny Kumar Sinha</div>
-                                                </div>
-                                            </div>
+                        <?php  while($story_row = mysqli_fetch_assoc($result2)) { ?>
+                            <a href="show.php?story=<?= $story_row['id']; ?>">
+                                <div class="item homeepisodeitomclass d-flex justify-content-center">
+                                    <div class="pointer epiCard">
+                                        <div class="episodeImage">
+                                            <img  src="../story_image/<?= $story_row['image']; ?>"  alt="Thumbnail" class="homeepi_image">
                                         </div>
-                                    </a>
+                                        <div class=" mt-2 rounded title_box_padding">
+                                            <div class="truncate"><?= $story_row['name'];?></div>
+                                            <div class="Card_Username">Sunny Kumar Sinha</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         <?php }  ?>
                         
                     </div>

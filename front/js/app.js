@@ -18,7 +18,7 @@ $(document).ready(() => {
         video: true
     });
     $(".owl-carousel").owlCarousel({
-        loop: true,
+        loop: false,
         dots:false,
         margin: 0,
         nav: false,
