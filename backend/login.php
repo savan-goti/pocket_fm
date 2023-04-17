@@ -16,7 +16,7 @@
         $email = $_POST['email'];
         $pass = $_POST['password'];
 
-        $sql = "SELECT * FROM tblusers WHERE `email`='$email' AND `visible_pass`='$pass'";
+        $sql = "SELECT * FROM tblusers WHERE `email`='$email' AND `visible_pass`='$pass' AND `user_role`='2'";
         $result = mysqli_query($conn,$sql) or die ("query unscsessfull");
         if (mysqli_num_rows($result) > 0) {
 

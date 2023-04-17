@@ -71,7 +71,7 @@ $proImage = isset($rowdata['picture'])? "../profile_image/".$rowdata['picture']:
           <div class="card-body text-center">
             <img src="<?= $proImage; ?>" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3"><?= $userData['username'] ?></h5>
+            <h5 class="my-3"><?= $rowdata['username']; ?></h5>
             <!-- <p class="text-muted mb-1">Full Stack Developer</p>
             <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
             <div class="d-flex justify-content-center mb-2">
@@ -186,7 +186,7 @@ $proImage = isset($rowdata['picture'])? "../profile_image/".$rowdata['picture']:
                     <label class="col-md-12">Photo</label>
                     <div class="col-md-12">
                       <input type="file" name="image" class="form-control file"> 
-                      <input type="hidden" name="old_image" class="image" value="<?= isset($rowdata['image'])?$rowdata['image']:''; ?>">
+                      <input type="hidden" name="old_image" class="image" value="<?= isset($rowdata['picture'])?$rowdata['picture']:''; ?>">
                     </div>
                 </div>
                 <div class="form-group mt-3">

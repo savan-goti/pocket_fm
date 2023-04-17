@@ -83,10 +83,21 @@ $userData = isset($_SESSION['userData'])?$_SESSION['userData']:'';
               </a>
             </p>
           <?php } } ?>
-          <div class="mt-5">
+          <?php if($userData){ ?>
+              <p>
+                <a href="wishlist.php" class="px-2" style="color: #ffffff;">
+                  Wishlist
+                </a>
+              </p>
+              <p>
+                <a href="profile.php" class="px-2" style="color: #ffffff;">
+                  profile
+                </a>
+              </p>
+            <?php } ?>
+          <div class="mt-4">
             <?php if($userData){ ?>
               <a href="logout.php" class="btn btn-outline-danger px-5 mobileNavBtn">Logout</a>
-              <a href="profile.php" class="btn btn-outline-danger px-5 mobileNavBtn">profile</a>
             <?php }else{ ?>
               <a href="login.php" class="btn btn-outline-danger px-5 mobileNavBtn">Login</a><br>
               <p style="margin-top: 1rem;margin-left: 60px;"><b>OR</b></p>
@@ -109,14 +120,11 @@ $userData = isset($_SESSION['userData'])?$_SESSION['userData']:'';
                 <li class="nav-item"><a href="<?= $base_url."show_list.php?category=".$caterow['id'] ?>"
                         class="nav-link link-light px-2"><?= $caterow['name'] ?></a></li>
                 <?php } } ?>
-                <!-- <li class="nav-item"><a href="#" class="nav-link link-light px-2">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light px-2">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light px-2">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-light px-2">About</a></li> -->
             </ul>
             <ul class="nav">
                 <?php if($userData){ ?>
                 <li class="nav-item"><a href="profile.php" class="nav-link link-light px-2"><i class="fa fa-solid fa-user"></i> Profile</a></li>
+                  <li class="nav-item"><a href="library.php" class="nav-link link-light px-2"> Library</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link link-light px-2">Logout</a></li>
                 <?php }else{ ?>
                 <li class="nav-item"><a href="login.php" class="nav-link link-light px-2">Login</a></li>
