@@ -86,6 +86,7 @@ $userData = isset($_SESSION['userData'])?$_SESSION['userData']:'';
           <div class="mt-5">
             <?php if($userData){ ?>
               <a href="logout.php" class="btn btn-outline-danger px-5 mobileNavBtn">Logout</a>
+              <a href="profile.php" class="btn btn-outline-danger px-5 mobileNavBtn">profile</a>
             <?php }else{ ?>
               <a href="login.php" class="btn btn-outline-danger px-5 mobileNavBtn">Login</a><br>
               <p style="margin-top: 1rem;margin-left: 60px;"><b>OR</b></p>
@@ -115,6 +116,7 @@ $userData = isset($_SESSION['userData'])?$_SESSION['userData']:'';
             </ul>
             <ul class="nav">
                 <?php if($userData){ ?>
+                <li class="nav-item"><a href="profile.php" class="nav-link link-light px-2"><i class="fa fa-solid fa-user"></i> Profile</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link link-light px-2">Logout</a></li>
                 <?php }else{ ?>
                 <li class="nav-item"><a href="login.php" class="nav-link link-light px-2">Login</a></li>

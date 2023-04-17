@@ -20,7 +20,7 @@ if(isset($_POST['login'])){
                 'username'=>$row['username'],
                 'email'=>$row['email'],
                 'mobile'=>$row['mobile'],
-                'user_id '=>$row['user_id'],
+                'user_id'=>$row['user_id'],
                 'visible_pass'=>$row['visible_pass'],
                 'user_role'=>$row['user_role'],
             );
