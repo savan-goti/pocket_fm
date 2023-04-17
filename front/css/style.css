@@ -237,3 +237,30 @@ input[type=number] {
     background-color: #13253b;
     color: #ffffff;
 }
+
+.alert {
+    padding: 20px;
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+.suc_alert {
+    padding: 20px;
+    background-color: #04AA6D !important;
+    color: white !important;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}

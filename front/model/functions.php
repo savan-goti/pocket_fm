@@ -7,11 +7,11 @@ function redirect($location){
     </script>";
     exit;
 }
+
 function pr($print_r){
     echo"<pre>";
     print_r($print_r);
     echo"</pre>";
 }
-
 
 ?>

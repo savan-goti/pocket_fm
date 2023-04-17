@@ -1,4 +1,8 @@
 <?php 
+// session_start();
+// echo "<pre>";
+// print_r($_SESSION);
+// die;
 include('layout/header.php'); 
 // if(!isset($_SESSION['userData'])){
 //     header("location: index.php");
