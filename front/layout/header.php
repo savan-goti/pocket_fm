@@ -2,8 +2,8 @@
 session_start();
 include('config.php');
 include('model/functions.php'); 
-$base_url = "http://localhost/pocket_fm-master/front/";
-$main_base_url = "http://localhost/pocket_fm-master/";
+$base_url = "http://localhost/radio_fm/front/";
+$main_base_url = "http://localhost/radio_fm/";
 $userData = isset($_SESSION['userData'])?$_SESSION['userData']:'';
 ?>
 <!DOCTYPE html>

@@ -5,7 +5,7 @@ include('config.php');
 if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
     header("location: login.php");
 }
-$base_url = "http://localhost/pocket_fm-master/backend/";
+$base_url = "http://localhost/radio_fm/backend/";
 $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
 ?>
