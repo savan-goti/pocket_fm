@@ -41,7 +41,7 @@
                                         </div>
                                         <div class=" mt-2 rounded title_box_padding">
                                             <div class="truncate"><?= $story_row['name'];?></div>
-                                            <div class="Card_Username">Sunny Kumar Sinha</div>
+                                            <div class="Card_Username"><?= date('M d, Y', strtotime($story_row['created_time'])); ?></div>
                                         </div>
                                     </div>
                                 </div>
